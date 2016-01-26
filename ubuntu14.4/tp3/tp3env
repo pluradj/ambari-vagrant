@@ -1,0 +1,17 @@
+# java 8
+export JAVA_HOME=/usr/jdk64/jdk1.8.0_60
+
+# vestige from hortonworks
+export HDP_VERSION=2.3.4.0-3485
+# hadoop home
+export HADOOP_HOME=/usr/hdp/$HDP_VERSION/hadoop
+# hadoop config
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+# native hadoop libraries to avoid the native warnings
+export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native
+
+# include the Hadoop configuration on the classpath so HDFS commands resolve correctly
+export CLASSPATH=$HADOOP_CONF_DIR
+
+# include Java and Hadoop on the path
+export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$PATH
